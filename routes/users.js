@@ -10,7 +10,8 @@ router.post('/', async function(req, res, next) {
     firstName:req.body.firstName,
     lastName:req.body.lastName
   }
-  let expireTime = Math.floor(Date.now() / 1000) + (60 * 60 * 24);
+  // let expireTime = Math.floor(Date.now() / 1000) + (60 * 60 * 24); //1day
+  let expireTime = Math.floor(Date.now() / 1000) + (60 * 60)  //1hr
 
   let token = await generateToken(user,expireTime)
     res.status(200).json({token:token})

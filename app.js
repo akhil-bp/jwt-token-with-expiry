@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 app.use('/api', ejwt({ 
   secret: "TW_JWTSECRET",
-  audience: [1,2,3,4,5],
+  // audience: [1,2,3,4,5],
   algorithm: 'HS256',
   issuer: TW_SITEURL
 }).unless({path: ['/api/authenticate', '/api/update-video-process']}), indexRouter);
